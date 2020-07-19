@@ -1,0 +1,51 @@
+﻿<%@ Master Language="VB" CodeFile="Frontend.master.vb" Inherits="MasterPages_Frontend" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <script src="../Scripts/modernizr-2.8.3.js"></script>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="True">
+            <Scripts>
+                <asp:ScriptReference Path="jquery" />
+            </Scripts>
+        </asp:ScriptManager>
+        <div id="PageWrapper">
+            <header><a href="/">Header Goes Here</a></header>
+            <nav>
+                <asp:Menu ID="Menu1" runat="server" CssClass="MainMenu" DataSourceID="SiteMapDataSource1" Orientation="Horizontal" StaticEnableDefaultPopOutImage="False"></asp:Menu>
+               <LevelStyles>
+                <asp:TreeView ID="TreeView1" runat="server" DataSourceID="SiteMapDataSource1" ShowExpandCollapse="False"></asp:TreeView>
+                   </LevelStyles>
+                <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="False" />
+            </nav>
+            <section id="MainContent">
+                <asp:SiteMapPath ID="SiteMapPath1" runat="server"></asp:SiteMapPath><br /><br />
+                <asp:ContentPlaceHolder ID="cpMainContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </section>
+            <aside id="Sidebar">
+                <p>Select a Theme</p>
+                <br />
+                <asp:DropDownList ID="ThemeList" runat="server" AutoPostBack="True">
+                    <asp:ListItem>Monochrome</asp:ListItem>
+                    <asp:ListItem>DarkGrey</asp:ListItem>
+                </asp:DropDownList>
+                <br />
+                <br />
+                <br />
+                <Wrox:Banner ID="Banner1" runat="server" DisplayDirection="Vertical"/>
+            </aside>
+            <footer>Footer Goes Here</footer>
+        </div>
+    <asp:ContentPlaceHolder ID="cpClientScript" runat="server">
+    </asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>

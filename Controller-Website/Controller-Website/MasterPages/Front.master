@@ -1,0 +1,43 @@
+﻿<%@ Master Language="VB" CodeFile="Front.master.vb" Inherits="MasterPages_Front" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Controller</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="../Styles/default.css" rel="stylesheet" />
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="True">
+            <Scripts>
+                <asp:ScriptReference Path="jquery" />
+            </Scripts>
+        </asp:ScriptManager>
+        <div id="PageWrapper">
+            <header>
+                <img alt="logo" src="../Images/controller-logo.png" height="55" width="54" />
+                <h1>Controller</h1>
+                <p>
+                    We will show you Controller
+                </p>
+                <img alt="retro-controller" src="../Images/retro-controller.jpg" height="122" width="285" />
+                <br />
+                <br />
+                We talk about controller here boy
+            </header>
+            <nav>
+                <p><a href="../index.aspx">Home</a> | <a href="../ps4.aspx">PS4</a> | <a href="../xbox-one.aspx">xBox One</a> | <a href="../switch.aspx">Switch</a> | <a href="../form.aspx">Form</a></p>
+            </nav>
+            <section id="MainContent">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </section>
+            <footer>Copyright 2018</footer>
+        </div>
+    </form>
+</body>
+</html>
